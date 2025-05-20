@@ -54,3 +54,26 @@ toggleBtn.addEventListener('click', () => {
     toggleBtn.textContent = 'Tema Escuro';
   }
 });
+
+document.getElementById('telefone').addEventListener('input', function (e) {
+  this.value = this.value.replace(/[^0-9]/g, '');
+});
+
+const telefoneInput = document.getElementById('telefone');
+
+telefoneInput.addEventListener('input', function (e) {
+  let numero = this.value.replace(/\D/g, ''); // Remove tudo que não é número
+
+  // Limita a 11 dígitos (2 DDD + 9 número)
+  if (numero.length > 11) numero = numero.slice(0, 11);
+
+  // Aplica a máscara dinamicamente
+  if (numero.length > 2) {
+    this.value = `(${numero.slice(0, 2)}) ${numero.slice(2)}`;
+  } else if (numero.length > 0) {
+    this.value = `(${numero}`;
+  } else {
+    this.value = '';
+  }
+});
+
