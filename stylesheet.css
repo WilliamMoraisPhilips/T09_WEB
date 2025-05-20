@@ -1,25 +1,112 @@
+:root {
+  /* Cores do tema claro */
+  --bg-color: lightgray;
+  --text-color: #000;
+  --card-bg: #a2a2a2;
+  --button-bg: #007BFF;
+  --button-text: #fff;
+}
+
+body.theme-dark {
+  /* Cores do tema escuro */
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --card-bg: #2c2c2c;
+  --button-bg: #1e88e5;
+  --button-text: #fff;
+}
+
 body {
-    background-color: lightgray;
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 20px;
-    box-sizing: border-box;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#toggle-theme {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 #perfil {
-    width: 200px;
-    height: 230px;
-    border-radius: 100%;
-    border: 3px solid gray;
-    margin-bottom: 20px;
+  width: 200px;
+  height: 230px;
+  border-radius: 100%;
+  border: 3px solid gray;
+  margin-bottom: 20px;
 }
-.apresen, .bio, .hobs, .interest, .redes {
-    text-align: center;
-    margin-bottom: 20px;
+
+.apresen, .bio, .hobs, .interest, .redes, .contatos {
+  text-align: center;
+  margin-bottom: 20px;
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  width: 100%;
+  margin: 10px auto;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+a {
+  color: #0073e6;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.redes a {
+  color: white;
+}
+
+/* Estilos do formulário mantidos iguais */
+.contatos form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contatos label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.contatos input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.contatos button {
+  padding: 10px;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contatos button:hover {
+  background-color: #0056b3;
 }
 
 ul {
@@ -38,70 +125,4 @@ a {
 
 a:hover {
     text-decoration: underline;
-}
-
-.apresen, .bio, .hobs, .interest, .redes, .contatos{
-    border: 2px solid black;
-    border-radius: 20px;
-    background-color: rgb(162, 162, 162);
-    color: black;
-    margin: 10px;
-    padding: 15px;
-    box-sizing: border-box;
-}
-
-.redes a{
-    color: white;
-}
-
-.contatos {
-    border: 2px solid #333;
-    border-radius: 10px;
-    background-color: rgb(162, 162, 162);
-    padding: 20px;
-    margin: 20px auto;
-}
-
-#motivo {
-    text-align: center;
-    color: black;
-    margin-bottom: 20px;
-}
-
-.contatos form {
-    display: flex;
-    flex-direction: column;
-}
-
-.contatos label {
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.contatos input {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-.contatos button {
-    padding: 10px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.contatos button:hover {
-    background-color: #0056b3;
-}
-
-.apresen, .bio, .hobs, .interest, .redes, .contatos{
-    width: 100%;
-    margin: 10px auto;
 }
